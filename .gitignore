@@ -1,3 +1,14 @@
-*.exe // To remove executable files
+# Ignore all exe files
+*.exe
 
-.vscode
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore VS Code workspace files
+*.code-workspace
+
+# (Optional) Ignore build and cache files
+/dist/
+/build/
+/out/
+/node_modules/
