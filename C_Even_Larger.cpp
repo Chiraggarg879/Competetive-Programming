@@ -6,7 +6,7 @@ using namespace std;
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
-
+  
 // Updated to use long long
 void solve(int n, vector<ll> &arr) {
     ll res = 0;
