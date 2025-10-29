@@ -7,28 +7,12 @@ using namespace std;
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
 
 
-vector<int> getPrimeFactors(int n) {
-    vector<int> factors;
-
-    if (n % 2 == 0) {
-        factors.push_back(2);
-        while (n % 2 == 0)
-            n /= 2;
+bool isPrime(int n){
+    if(n ==2) return true;
+    for(int i=2;i*i<=n;i++){
+        if(n % i ==0) return false;
     }
-    else return {2};
-    for (int i = 3; i * i <= n; i += 2) {
-        
-        if (n % i == 0) {
-            factors.push_back(i);
-            while (n % i == 0)
-                n /= i;
-        }
-    }
-
-    if (n > 2)
-        factors.push_back(n);
-
-    return factors;
+    return true;
 }
 void solve() {
      // Your solution here
@@ -44,12 +28,25 @@ int main() {
         vector<long long> v(n);
         for(int i=0;i<n;i++) cin>>v[i];
         
-        long long  mn = 1e18;
-        for(int i=0;i<n;i++){
-            vector<int> f = getPrimeFactors(v[i]);
-
-
+        int i=2;
+        while(true){
+            if(isPrime(i)){
+                int flag = 0;
+                for(int j=0;j<n;j++){
+                    if(v[j] % i != 0){
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag == 1)
+                {
+                    cout<<i<<endl;
+                    break;
+                }
+            }
+            i++;
         }
+    
     }
     return 0;
 }
