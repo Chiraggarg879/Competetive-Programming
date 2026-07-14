@@ -1,6 +1,9 @@
 # Ignore all exe files
 *.exe
 
+# Ignore problem files
+*.prob
+
 # Ignore VS Code settings folder
 .vscode/
 
